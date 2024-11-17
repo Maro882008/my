@@ -1,0 +1,68 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+class queue <t> where t: person
+{
+    private int front;
+    private int rear;
+    public t[] queuee;
+
+    public queue(int size)
+    {
+        front = 0;
+        rear = -1;
+        queuee = new t[size];
+    }
+
+    public void inqueue(t item)
+    {
+        if (rear == queuee.Length - 1)
+        {
+            Console.WriteLine("qu is full");
+        }
+        else
+        {
+            queuee[++rear] = item;
+        }
+
+    }
+    public t dequeue()
+    {
+        if (front > rear)
+        {
+            throw new InvalidOperationException("qu is embty");
+        }
+        else
+        {
+            t item=queuee[front];
+            front++;
+            return item;
+        }
+    }
+    public bool isembty()
+    {
+        return front < rear;
+    }
+    public t pek()
+    {
+        if (front > rear)
+        {
+            throw new InvalidOperationException("qu is embty");
+        }
+        else
+        {
+            return queuee[front];
+        }
+    }
+    public void getitems()
+    {
+        for (int i = front; i <=rear; i++)
+        {
+            Console.WriteLine(queuee[i].name);
+        }
+    }
+}
+
+

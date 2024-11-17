@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace bank_system
+{
+    internal class savingaccoun  : account
+    {
+
+        public savingaccoun(string accountnumber, string owner, decimal balanc) 
+            : base(accountnumber, owner, balanc)
+        {
+        }
+        public override void withdraw(decimal amount)
+        {
+            base.withdraw(amount);
+        }
+
+    }
+}

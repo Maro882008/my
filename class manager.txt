@@ -1,0 +1,16 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace bank_system
+{
+    internal class manager:person
+    {
+        public void processcustomer(customer customer)
+        {
+            Console.WriteLine($"manager{name}isprocessing customer{customer.name}");
+        }
+    }
+}

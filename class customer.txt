@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace bank_system
+{
+    internal class customer : person
+    
+    {
+        public account account { get; set; }
+        public void debosit(decimal amount)
+        {
+            if (amount <= 0)
+            {
+                Console.WriteLine("ammount of debosit");
+            }
+            else
+            {
+                account.depost(amount);
+                Console.WriteLine("successfully deposit"+amount+"into account"+account.accountNumber+"new balanc"+account.getbalanc());
+            }
+        }
+        public void wihtdraw(decimal amount)
+        {
+            if(amount <= 0)
+            {
+                Console.WriteLine("amount of whithdraw");
+            }
+            else
+            {
+                account.withdraw(amount);
+                Console.WriteLine("successfully deposit" + amount + "into account" + account.getbalanc());
+            }
+            
+        }
+        public void printaccounrinfo()
+        {
+            Console.WriteLine($"account info{name}:");
+            Console.WriteLine();
+        }
+
+    }
+}
